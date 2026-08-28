@@ -33,11 +33,9 @@ export const Navbar: React.FC = () => {
               <Link to="/" className="hover:text-white transition-colors">
                 Explore
               </Link>
-              <Link to="/problems" className="hover:text-white transition-colors">
-                Problems
-              </Link>
-              <Link to="/contest" className="hover:text-white transition-colors">
-                Contest
+              <Link to="/leaderboard" className="hover:text-white transition-colors flex items-center gap-1">
+                <Trophy className="w-3.5 h-3.5 text-yellow-400" />
+                Leaderboard
               </Link>
               <a
                 href="http://localhost:5000/api/docs"
@@ -101,6 +99,14 @@ export const Navbar: React.FC = () => {
                         My Profile
                       </Link>
 
+                      <Link
+                        to="/leaderboard"
+                        className="flex items-center gap-2 px-4 py-2 text-sm text-gray-300 hover:bg-[#333333] hover:text-white"
+                      >
+                        <Trophy className="w-4 h-4 text-yellow-400" />
+                        Leaderboard
+                      </Link>
+
                       <button
                         onClick={handleLogout}
                         className="w-full text-left flex items-center gap-2 px-4 py-2 text-sm text-red-400 hover:bg-[#333333] hover:text-red-300"
@@ -114,6 +120,12 @@ export const Navbar: React.FC = () => {
               </div>
             ) : (
               <div className="flex items-center gap-3">
+                <Link
+                  to="/leaderboard"
+                  className="hidden sm:flex text-sm font-medium text-gray-300 hover:text-white px-3 py-1.5 rounded transition-colors"
+                >
+                  Leaderboard
+                </Link>
                 <Link
                   to="/login"
                   className="text-sm font-medium text-gray-300 hover:text-white px-3 py-1.5 rounded transition-colors"
@@ -134,4 +146,3 @@ export const Navbar: React.FC = () => {
     </nav>
   );
 };
-
